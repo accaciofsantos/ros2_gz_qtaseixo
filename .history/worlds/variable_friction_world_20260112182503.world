@@ -1,0 +1,101 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <world name='variable_friction_world'>
+
+    <!-- Coordinates -->
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>41.1780</latitude_deg>
+      <longitude_deg>-8.5980</longitude_deg>
+      <elevation>0.0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+
+    <!-- Plugins -->
+    <plugin name='gz::sim::systems::Physics' filename='libgz-sim-physics-system.so'/>
+    <plugin name='gz::sim::systems::UserCommands' filename='libgz-sim-user-commands-system.so'/>
+    <plugin name='gz::sim::systems::SceneBroadcaster' filename='libgz-sim-scene-broadcaster-system.so'/>
+    <plugin name="gz::sim::systems::Sensors" filename="libgz-sim-sensors-system.so">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <plugin name="gz::sim::systems::Imu" filename="libgz-sim-imu-system.so"/>
+    <plugin name="gz::sim::systems::NavSat" filename="libgz-sim-navsat-system.so"/>
+    <plugin name="gz::sim::systems::Magnetometer" filename="libgz-sim-magnetometer-system.so"/>
+    <plugin name="gz::sim::systems::AirPressure" filename="libgz-sim-air-pressure-system.so"/>
+    <plugin name="gz::sim::systems::Contact" filename="libgz-sim-contact-system.so"/>
+
+    <!-- Physics -->
+    <physics type='ode'>
+      <max_step_size>0.003</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <gravity>0 0 -9.8</gravity>
+    </physics>
+
+    <!-- ================= 2x2 Terrain Cells ================= -->
+    <!-- Line 1 (Y>0), Column 1 (X<0) --> 
+    <model name='cell_1_1_slippery'>
+      <static>true</static>
+      <pose>-17.5 17.5 0 0 0 0</pose>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry><plane><normal>0 0 1</normal><size>35 35</size></plane></geometry>
+          <surface><friction><ode><mu>0.1</mu><mu2>0.1</mu2></ode></friction></surface>
+        </collision>
+        <visual name='visual'>
+          <geometry><plane><normal>0 0 1</normal><size>35 35</size></plane></geometry>
+          <material><diffuse>0.4 0.6 0.9 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Line 1 (Y>0), Column 2 (X>0) --> 
+    <model name='cell_1_2_medium'>
+      <static>true</static>
+      <pose>17.5 17.5 0 0 0 0</pose>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry><plane><normal>0 0 1</normal><size>35 35</size></plane></geometry>
+          <surface><friction><ode><mu>0.4</mu><mu2>0.4</mu2></ode></friction></surface>
+        </collision>
+        <visual name='visual'>
+          <geometry><plane><normal>0 0 1</normal><size>35 35</size></plane></geometry>
+          <material><diffuse>0.3 0.7 0.3 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Line 2 (Y<0), Column 1 (X<0) --> 
+    <model name='cell_2_1_high'>
+      <static>true</static>
+      <pose>-17.5 -17.5 0 0 0 0</pose>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry><plane><normal>0 0 1</normal><size>35 35</size></plane></geometry>
+          <surface><friction><ode><mu>0.8</mu><mu2>0.8</mu2></ode></friction></surface>
+        </collision>
+        <visual name='visual'>
+          <geometry><plane><normal>0 0 1</normal><size>35 35</size></plane></geometry>
+          <material><diffuse>1 0.6 0.6 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Line 2 (Y<0), Column 2 (X>0) --> 
+    <model name='cell_2_2_very_high'>
+      <static>true</static>
+      <pose>17.5 -17.5 0 0 0 0</pose>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry><plane><normal>0 0 1</normal><size>35 35</size></plane></geometry>
+          <surface><friction><ode><mu>1.2</mu><mu2>1.2</mu2></ode></friction></surface>
+        </collision>
+        <visual name='visual'>
+          <geometry><plane><normal>0 0 1</normal><size>35 35</size></plane></geometry>
+          <material><diffuse>1 0.8 0.2 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+  </world>
+</sdf>

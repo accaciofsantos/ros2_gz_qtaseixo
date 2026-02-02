@@ -1,0 +1,107 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <world name='scenario1_orchard'>
+
+    <!-- Física do mundo -->
+    <physics type='ode'>
+      <max_step_size>0.003</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <gravity>0 0 -9.8</gravity>
+    </physics>
+
+    <!-- Plugins -->
+    <plugin name='gz::sim::systems::Physics' filename='libgz-sim-physics-system.so'/>
+    <plugin name='gz::sim::systems::UserCommands' filename='libgz-sim-user-commands-system.so'/>
+    <plugin name='gz::sim::systems::SceneBroadcaster' filename='libgz-sim-scene-broadcaster-system.so'/>
+    <plugin name='gz::sim::systems::Sensors' filename='libgz-sim-sensors-system.so'>
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <plugin name='gz::sim::systems::Imu' filename='libgz-sim-imu-system.so'/>
+    <plugin name='gz::sim::systems::NavSat' filename='libgz-sim-navsat-system.so'/>
+    <plugin name='gz::sim::systems::Magnetometer' filename='libgz-sim-magnetometer-system.so'/>
+    <plugin name='gz::sim::systems::AirPressure' filename='libgz-sim-air-pressure-system.so'/>
+    <plugin name='gz::sim::systems::Contact' filename='libgz-sim-contact-system.so'/>
+
+    <!-- Cena -->
+    <scene>
+      <ambient>1 1 1 1</ambient>
+      <background>0.3 0.7 0.9 1</background>
+      <shadows>1</shadows>
+      <grid>true</grid>
+      <user_camera>
+        <pose>-30 0 60 0 -1.57 0</pose>
+      </user_camera>
+    </scene>
+
+    <!-- Luz do sol -->
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <direction>-0.5 0.5 -1.0</direction>
+    </light>
+
+    <!-- Chão -->
+    <model name='ground_plane'>
+      <static>true</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.3 0.7 0.3 1</ambient>
+            <diffuse>0.3 0.7 0.3 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Fileiras de árvores -->
+    <!-- 3 fileiras x 10 árvores cada -->
+    <!-- Distância entre árvores: 2 m na fileira, 1.5 m entre fileiras -->
+    <!-- Ajuste conforme necessário -->
+    <!-- Fileira 1 -->
+    <include>
+      <name>oak_1_1</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_real/model.sdf</uri>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>oak_1_2</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_real/model.sdf</uri>
+      <pose>2 0 0 0 0 0</pose>
+    </include>
+    <!-- Continue até oak_1_10 -->
+    
+    <!-- Fileira 2 -->
+    <include>
+      <name>oak_2_1</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_real/model.sdf</uri>
+      <pose>0 1.5 0 0 0 0</pose>
+    </include>
+    <!-- Continue até oak_2_10 -->
+
+    <!-- Fileira 3 -->
+    <include>
+      <name>oak_3_1</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_real/model.sdf</uri>
+      <pose>0 3.0 0 0 0 0</pose>
+    </include>
+    <!-- Continue até oak_3_10 -->
+
+  </world>
+</sdf>

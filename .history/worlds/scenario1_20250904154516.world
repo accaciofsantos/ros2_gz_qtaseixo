@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='ASCII'?>
+<sdf version='1.4'>
+  <world name='scenario1_world'>
+    <physics type='ode'>
+      <max_step_size>0.003</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <gravity>0 0 -9.8</gravity>
+    </physics>
+
+    <!-- Cena -->
+    <scene>
+      <ambient>1 1 1 1</ambient>
+      <background>0.3 0.7 0.9 1</background>
+      <shadows>1</shadows>
+      <grid>false</grid>
+      <user_camera>
+        <pose>-5 -5 10 0 -1.57 0</pose>
+      </user_camera>
+    </scene>
+
+    <!-- Luz do sol -->
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <direction>-0.5 0.5 -1.0</direction>
+    </light>
+
+    <!-- Fileira 1 -->
+    <include><uri>model://oak_base</uri><pose>0 0 0 0 0 0</pose></include>
+    <include><uri>model://oak_base</uri><pose>1 0 0 0 0 0</pose></include>
+    <include><uri>model://oak_base</uri><pose>2 0 0 0 0 0</pose></include>
+    <include><uri>model://oak_base</uri><pose>3 0 0 0 0 0</pose></include>
+    <include><uri>model://oak_base</uri><pose>4 0 0 0 0 0</pose></include>
+    <include><uri>model://oak_base</uri><pose>5 0 0 0 0 0</pose></include>
+    <include><uri>model://oak_base</uri><pose>6 0 0 0 0 0</pose></include>
+    <include><uri>model://oak_base</uri><pose>7 0 0 0 0 0</pose></include>
+    <include><uri>model://oak_base</uri><pose>8 0 0 0 0 0</pose></include>
+    <include><uri>model://oak_base</uri><pose>9 0 0 0 0 0</pose></include>
+
+    <!-- Fileira 2 -->
+    <include><uri>model://oak_base</uri><pose>0 1.5 0 0 0 0</pose></include>
+    <include><uri>model://oak_base</uri><pose>1 1.5 0 0 0 0</pose></include>
+    <include><uri>model://oak_base</uri><pose>2 1.5 0 0 0 0</pose></include>
+    <include><uri>model://oak_base</uri><pose>3 1.5 0 0 0 0</pose></include>
+    <include><uri>model://oak_base</uri><pose>4 1.5 0 0 0 0</pose></include>
+    <include><uri>model://oak_base</uri><pose>5 1.5 0 0 0 0</pose></include>
+    <include><uri>model://oak_base</uri><pose>6 1.5 0 0 0 0</pose></include>
+    <include><uri>model://oak_base</uri><pose>7 1.5 0 0 0 0</pose></include>
+    <include><uri>model://oak_base</uri><pose>8 1.5 0 0 0 0</pose></include>
+    <include><uri>model://oak_base</uri><pose>9 1.5 0 0 0 0</pose></include>
+
+    <!-- Fileira 3 -->
+    <include><uri>model://oak_base</uri><pose>0 3.0 0 0 0 0</pose></include>
+    <include><uri>model://oak_base</uri><pose>1 3.0 0 0 0 0</pose></include>
+    <include><uri>model://oak_base</uri><pose>2 3.0 0 0 0 0</pose></include>
+    <include><uri>model://oak_base</uri><pose>3 3.0 0 0 0 0</pose></include>
+    <include><uri>model://oak_base</uri><pose>4 3.0 0 0 0 0</pose></include>
+    <include><uri>model://oak_base</uri><pose>5 3.0 0 0 0 0</pose></include>
+    <include><uri>model://oak_base</uri><pose>6 3.0 0 0 0 0</pose></include>
+    <include><uri>model://oak_base</uri><pose>7 3.0 0 0 0 0</pose></include>
+    <include><uri>model://oak_base</uri><pose>8 3.0 0 0 0 0</pose></include>
+    <include><uri>model://oak_base</uri><pose>9 3.0 0 0 0 0</pose></include>
+  </world>
+</sdf>

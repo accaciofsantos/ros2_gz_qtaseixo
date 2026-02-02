@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<sdf version="1.8">
+  <world name="scenario1_world">
+
+    <!-- Física -->
+    <physics type="ode">
+      <max_step_size>0.003</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <gravity>0 0 -9.8</gravity>
+    </physics>
+
+    <!-- Luz -->
+    <light name="sun" type="directional">
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <direction>-0.5 0.5 -1</direction>
+    </light>
+
+    <!-- Cena -->
+    <scene>
+      <ambient>1 1 1 1</ambient>
+      <background>0.5 0.7 1 1</background>
+      <grid>false</grid>
+    </scene>
+
+    <!-- Geração das árvores -->
+    <!-- 3 fileiras, distância entre fileiras = 1.5 m -->
+    <!-- 10 árvores por fileira, distância entre árvores = 1.0 m -->
+    <!-- Posição inicial: x=0, y=0 -->
+    <model name="tree_row_0">
+      <static>true</static>
+      <pose>0 0 0 0 0 0</pose>
+      <link name="link"/>
+    </model>
+
+    <!-- Loop virtual para as árvores -->
+    <!-- Fileira 1 -->
+    <model name="oak_1_0">
+      <pose>0 0 0 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <visual name="trunk">
+          <geometry>
+            <cylinder>
+              <radius>0.1</radius>
+              <length>1.5</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.55 0.27 0.07 1</ambient>

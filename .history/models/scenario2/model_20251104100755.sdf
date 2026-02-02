@@ -1,0 +1,176 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="scenario2">
+    <static>true</static>
+
+    <!-- Chão -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- Luz -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Fileiras de árvores -->
+    <!-- Fileira 1 -->
+    <include>
+      <name>oak_1</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_tree/model.sdf</uri>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>oak_2</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_tree/model.sdf</uri>
+      <pose>5 0 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>oak_3</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_tree/model.sdf</uri>
+      <pose>10 0 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>oak_4</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_tree/model.sdf</uri>
+      <pose>15 0 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>oak_5</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_tree/model.sdf</uri>
+      <pose>20 0 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>oak_6</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_tree/model.sdf</uri>
+      <pose>25 0 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>oak_7</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_tree/model.sdf</uri>
+      <pose>30 0 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>oak_8</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_tree/model.sdf</uri>
+      <pose>35 0 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>oak_9</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_tree/model.sdf</uri>
+      <pose>40 0 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>oak_10</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_tree/model.sdf</uri>
+      <pose>45 0 0 0 0 0</pose>
+    </include>
+
+    <!-- Fileira 2 -->
+    <include>
+      <name>oak_11</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_tree/model.sdf</uri>
+      <pose>0 8 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>oak_12</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_tree/model.sdf</uri>
+      <pose>5 8 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>oak_13</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_tree/model.sdf</uri>
+      <pose>10 8 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>oak_14</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_tree/model.sdf</uri>
+      <pose>15 8 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>oak_15</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_tree/model.sdf</uri>
+      <pose>20 8 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>oak_16</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_tree/model.sdf</uri>
+      <pose>25 8 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>oak_17</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_tree/model.sdf</uri>
+      <pose>30 8 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>oak_18</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_tree/model.sdf</uri>
+      <pose>35 8 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>oak_19</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_tree/model.sdf</uri>
+      <pose>40 8 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>oak_20</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_tree/model.sdf</uri>
+      <pose>45 8 0 0 0 0</pose>
+    </include>
+
+    <!-- Fileira 3 -->
+    <include>
+      <name>oak_21</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_tree/model.sdf</uri>
+      <pose>0 16 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>oak_22</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_tree/model.sdf</uri>
+      <pose>5 16 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>oak_23</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_tree/model.sdf</uri>
+      <pose>10 16 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>oak_24</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_tree/model.sdf</uri>
+      <pose>15 16 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>oak_25</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_tree/model.sdf</uri>
+      <pose>20 16 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>oak_26</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_tree/model.sdf</uri>
+      <pose>25 16 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>oak_27</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_tree/model.sdf</uri>
+      <pose>30 16 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>oak_28</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_tree/model.sdf</uri>
+      <pose>35 16 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>oak_29</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_tree/model.sdf</uri>
+      <pose>40 16 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>oak_30</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_tree/model.sdf</uri>
+      <pose>45 16 0 0 0 0</pose>
+    </include>
+
+
+
+  </model>
+</sdf>

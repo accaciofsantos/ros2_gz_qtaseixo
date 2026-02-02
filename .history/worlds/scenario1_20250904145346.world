@@ -1,0 +1,104 @@
+<?xml version="1.0" ?>
+<sdf version="1.8">
+  <world name="scenario1_world">
+
+    <!-- Física -->
+    <physics type="ode">
+      <max_step_size>0.003</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <gravity>0 0 -9.8</gravity>
+    </physics>
+
+    <!-- Luz -->
+    <light name="sun" type="directional">
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <direction>-0.5 0.5 -1</direction>
+    </light>
+
+    <!-- Cena -->
+    <scene>
+      <ambient>1 1 1 1</ambient>
+      <background>0.5 0.7 1 1</background>
+      <grid>false</grid>
+    </scene>
+
+    <!-- Geração das árvores -->
+    <!-- 3 fileiras, distância entre fileiras = 1.5 m -->
+    <!-- 10 árvores por fileira, distância entre árvores = 1.0 m -->
+    <!-- Posição inicial: x=0, y=0 -->
+    <model name="tree_row_0">
+      <static>true</static>
+      <pose>0 0 0 0 0 0</pose>
+      <link name="link"/>
+    </model>
+
+    <!-- Loop virtual para as árvores -->
+    <!-- Fileira 1 -->
+    <model name="oak_1_0">
+      <pose>0 0 0 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <visual name="trunk">
+          <geometry>
+            <cylinder>
+              <radius>0.1</radius>
+              <length>1.5</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.55 0.27 0.07 1</ambient>
+          </material>
+        </visual>
+        <visual name="leaves">
+          <pose>0 0 1.25 0 0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.5</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0 0.5 0 1</ambient>
+          </material>
+        </visual>
+        <collision name="trunk_collision">
+          <geometry>
+            <cylinder>
+              <radius>0.1</radius>
+              <length>1.5</length>
+            </cylinder>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <!-- Copiar e ajustar poses das 10 árvores da fileira 1 -->
+    <model name="oak_1_1">
+      <pose>1 0 0 0 0 0</pose>
+      <include><uri>model://oak_1_0</uri></include>
+    </model>
+    <model name="oak_1_2">
+      <pose>2 0 0 0 0 0</pose>
+      <include><uri>model://oak_1_0</uri></include>
+    </model>
+    <!-- repetir até oak_1_9 -->
+
+    <!-- Fileira 2 -->
+    <model name="oak_2_0">
+      <pose>0 1.5 0 0 0 0</pose>
+      <include><uri>model://oak_1_0</uri></include>
+    </model>
+    <!-- repetir 10 árvores com y=1.5 -->
+
+    <!-- Fileira 3 -->
+    <model name="oak_3_0">
+      <pose>0 3.0 0 0 0 0</pose>
+      <include><uri>model://oak_1_0</uri></include>
+    </model>
+    <!-- repetir 10 árvores com y=3.0 -->
+
+  </world>
+</sdf>

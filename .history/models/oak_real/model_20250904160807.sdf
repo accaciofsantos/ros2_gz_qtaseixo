@@ -1,0 +1,40 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name='oak_real'>
+    <static>true</static>
+    <!-- Tronco -->
+    <link name='trunk'>
+      <visual name='trunk_visual'>
+        <geometry>
+          <mesh>
+            <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_real/meshes/oak_trunk.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='trunk_collision'>
+        <geometry>
+          <mesh>
+            <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_real/meshes/oak_trunk.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Folhas -->
+    <link name='leaves'>
+      <visual name='leaves_visual'>
+        <geometry>
+          <mesh>
+            <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_real/meshes/oak_leaves.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='leaves_collision'>
+        <geometry>
+          <mesh>
+            <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_real/meshes/oak_leaves.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

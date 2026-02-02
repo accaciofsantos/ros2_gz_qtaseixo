@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="terreno_realista">
+    <static>true</static>
+
+    <link name="link">
+
+      <!-- HEIGHTMAP -->
+      <collision name="collision">
+        <geometry>
+          <heightmap>
+            <uri>model://terreno_realista/heightmap.png</uri>
+            <size>70 70 6</size>
+            <pos>0 0 0</pos>
+          </heightmap>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.6</mu>
+              <mu2>0.6</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <heightmap>
+            <uri>model://terreno_realista/heightmap.png</uri>
+            <size>70 70 6</size>
+            <pos>0 0 0</pos>
+          </heightmap>
+        </geometry>
+      </visual>
+
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="low_poly_tree">
+    <static>true</static>
+
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <mesh>
+              <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/low_poly_tree/Lowpoly_tree_sample.obj</uri>
+            </mesh>
+
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <collision name="collision">
+        <geometry>
+          <sphere>
+            <radius>0.3</radius>
+          </sphere>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

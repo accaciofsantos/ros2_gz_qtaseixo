@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<sdf version="1.8">
+  <world name="scenario1_world">
+
+    <!-- Plano de chão -->
+    <model name="ground_plane">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.3 0.8 0.3 1</ambient>
+            <diffuse>0.3 0.8 0.3 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Função para adicionar árvores -->
+    <!-- Tronco: cilindro, Copa: esfera -->
+    <model name="tree_1">
+      <pose>0 0 1 0 0 0</pose>
+      <static>true</static>
+      <link name="trunk">
+        <collision name="trunk_collision">
+          <geometry>
+            <cylinder>
+              <radius>0.2</radius>
+              <length>2</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <visual name="trunk_visual">
+          <geometry>
+            <cylinder>
+              <radius>0.2</radius>
+              <length>2</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.55 0.27 0.07 1</ambient>
+            <d

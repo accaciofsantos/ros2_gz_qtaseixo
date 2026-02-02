@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<sdf version="1.8">
+  <world name="scenario1_world">
+
+    <!-- Physics settings -->
+    <physics type="ode">
+      <max_step_size>0.003</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <gravity>0 0 -9.8</gravity>
+    </physics>
+
+    <!-- Light / sun -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Include the scenario1 model -->
+    <include>
+      <uri>model://scenario1</uri>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+
+  </world>
+</sdf>

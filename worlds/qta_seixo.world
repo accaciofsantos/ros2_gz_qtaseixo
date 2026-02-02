@@ -1,0 +1,71 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="qta_seixo">
+
+    <!-- coord. geog -->
+    <spherical_coordinates>
+        <latitude_deg>41.1688889</latitude_deg>
+        <longitude_deg>-7.5544444</longitude_deg>
+        <elevation>217.42</elevation>
+        <heading_deg>0.0</heading_deg>
+    </spherical_coordinates>
+
+    <!-- Plugins -->
+    <physics name="1ms" type="ignored">
+        <max_step_size>0.001</max_step_size>
+        <real_time_factor>1.0</real_time_factor>
+    </physics>
+    <plugin
+        filename="gz-sim-physics-system"
+        name="gz::sim::systems::Physics">
+    </plugin>
+    <plugin
+        filename="gz-sim-user-commands-system"
+        name="gz::sim::systems::UserCommands">
+    </plugin>
+    <plugin
+        filename="gz-sim-scene-broadcaster-system"
+        name="gz::sim::systems::SceneBroadcaster">
+    </plugin>
+    <plugin
+        filename="gz-sim-imu-system"
+        name="gz::sim::systems::Imu">
+    </plugin>
+    <plugin
+        filename="gz-sim-sensors-system"
+        name="gz::sim::systems::Sensors">
+        <render_engine>ogre2</render_engine>
+    </plugin>
+    <plugin
+        filename="gz-sim-contact-system"
+        name="gz::sim::systems::Contact">
+    </plugin>
+    
+    <plugin
+        filename="gz-sim-navsat-system"
+        name="gz::sim::systems::NavSat"/>
+
+    <plugin
+        filename="gz-sim-magnetometer-system"
+        name="gz::sim::systems::Magnetometer"/>
+
+    <plugin
+        filename="gz-sim-air-pressure-system"
+        name="gz::sim::systems::AirPressure"/>
+
+
+    <!-- Seu modelo qtaseixo -->
+    <include>
+      <uri>model://qtaseixo</uri>
+    </include>
+    <scene>
+    <user_camera>
+        <pose>-30 0 60 0 -1.57 0</pose>  <!-- x y z roll pitch yaw -->
+    </user_camera>
+    </scene>
+
+    <!-- Posição inicial da câmera -->
+
+
+  </world>
+</sdf>

@@ -1,0 +1,63 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <world name='scenario1'>
+
+    <!-- Física -->
+    <physics name='default_physics' type='ode'>
+  <max_step_size>0.003</max_step_size>
+  <real_time_factor>1.0</real_time_factor>
+  <real_time_update_rate>1000</real_time_update_rate>
+  <gravity>
+    <x>0</x>
+    <y>0</y>
+    <z>-9.8</z>
+  </gravity>
+</physics>
+
+
+    <!-- Chão -->
+    <model name='ground_plane'>
+      <static>true</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>50 50</size>
+            </plane>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>50 50</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.3 0.7 0.3 1</ambient>
+            <diffuse>0.3 0.7 0.3 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Árvores fileira 1 -->
+    <include>
+      <name>oak_1</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_real/model.sdf</uri>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>oak_2</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_real/model.sdf</uri>
+      <pose>2 0 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>oak_3</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/oak_real/model.sdf</uri>
+      <pose>4 0 0 0 0 0</pose>
+    </include>
+
+  </world>
+</sdf>

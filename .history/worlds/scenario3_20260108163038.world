@@ -1,0 +1,201 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <world name='scenario3'>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>41.1780</latitude_deg>
+      <longitude_deg>-8.5980</longitude_deg>
+      <elevation>0.0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+
+    <plugin name='gz::sim::systems::Physics' filename='libgz-sim-physics-system.so'/>
+    <plugin name='gz::sim::systems::UserCommands' filename='libgz-sim-user-commands-system.so'/>
+    <plugin name='gz::sim::systems::SceneBroadcaster' filename='libgz-sim-scene-broadcaster-system.so'/>
+    <plugin name="gz::sim::systems::Sensors" filename="libgz-sim-sensors-system.so">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <plugin name="gz::sim::systems::Imu" filename="libgz-sim-imu-system.so"/>
+    <plugin name="gz::sim::systems::NavSat" filename="libgz-sim-navsat-system.so"/>
+    <plugin name="gz::sim::systems::Magnetometer" filename="libgz-sim-magnetometer-system.so"/>
+    <plugin name="gz::sim::systems::AirPressure" filename="libgz-sim-air-pressure-system.so"/>
+    <plugin name="gz::sim::systems::Contact" filename="libgz-sim-contact-system.so"/>
+
+    <physics type='ode'>
+      <max_step_size>0.003</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <gravity>0 0 -9.8</gravity>
+    </physics>
+
+    <model name='ground_plane'>
+      <static>true</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>70 70</size>
+            </plane>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>70 70</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.3 0.7 0.3 1</ambient>
+            <diffuse>0.3 0.7 0.3 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <!-- Tree 1: row 1, col 1 -->
+    <include>
+      <name>tree_1</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/low_poly_tree/model.sdf</uri>
+      <pose>0.000 0.000 0 0 0 0.000</pose>
+    </include>
+    <!-- Tree 2: row 1, col 2 -->
+    <include>
+      <name>tree_2</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/low_poly_tree/model.sdf</uri>
+      <pose>1.350 -0.236 0 0 0 0.000</pose>
+    </include>
+    <!-- Tree 3: row 1, col 3 -->
+    <include>
+      <name>tree_3</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/low_poly_tree/model.sdf</uri>
+      <pose>2.844 -0.038 0 0 0 0.000</pose>
+    </include>
+    <!-- Tree 4: row 1, col 4 -->
+    <include>
+      <name>tree_4</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/low_poly_tree/model.sdf</uri>
+      <pose>4.483 0.392 0 0 0 0.087</pose>
+    </include>
+    <!-- Tree 5: row 1, col 5 -->
+    <include>
+      <name>tree_5</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/low_poly_tree/model.sdf</uri>
+      <pose>6.000 0.000 0 0 0 0.000</pose>
+    </include>
+    <!-- Tree 6: row 1, col 6 -->
+    <include>
+      <name>tree_6</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/low_poly_tree/model.sdf</uri>
+      <pose>7.500 0.000 0 0 0 0.000</pose>
+    </include>
+    <!-- Tree 7: row 2, col 1 -->
+    <include>
+      <name>tree_7</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/low_poly_tree/model.sdf</uri>
+      <pose>0.000 4.000 0 0 0 0.000</pose>
+    </include>
+    <!-- Tree 8: row 2, col 2 -->
+    <include>
+      <name>tree_8</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/low_poly_tree/model.sdf</uri>
+      <pose>1.413 4.137 0 0 0 0.000</pose>
+    </include>
+    <!-- Tree 9: row 2, col 3 -->
+    <include>
+      <name>tree_9</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/low_poly_tree/model.sdf</uri>
+      <pose>3.035 3.956 0 0 0 0.000</pose>
+    </include>
+    <!-- Tree 10: row 2, col 4 -->
+    <include>
+      <name>tree_10</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/low_poly_tree/model.sdf</uri>
+      <pose>4.134 4.377 0 0 0 0.087</pose>
+    </include>
+    <!-- Tree 11: row 2, col 5 -->
+    <include>
+      <name>tree_11</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/low_poly_tree/model.sdf</uri>
+      <pose>6.000 4.000 0 0 0 0.000</pose>
+    </include>
+    <!-- Tree 12: row 2, col 6 -->
+    <include>
+      <name>tree_12</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/low_poly_tree/model.sdf</uri>
+      <pose>7.500 4.000 0 0 0 0.000</pose>
+    </include>
+    <!-- Tree 13: row 3, col 1 -->
+    <include>
+      <name>tree_13</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/low_poly_tree/model.sdf</uri>
+      <pose>0.000 8.000 0 0 0 0.000</pose>
+    </include>
+    <!-- Tree 14: row 3, col 2 -->
+    <include>
+      <name>tree_14</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/low_poly_tree/model.sdf</uri>
+      <pose>1.482 8.206 0 0 0 0.000</pose>
+    </include>
+    <!-- Tree 15: row 3, col 3 -->
+    <include>
+      <name>tree_15</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/low_poly_tree/model.sdf</uri>
+      <pose>2.901 8.131 0 0 0 0.000</pose>
+    </include>
+    <!-- Tree 16: row 3, col 4 -->
+    <include>
+      <name>tree_16</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/low_poly_tree/model.sdf</uri>
+      <pose>3.786 8.362 0 0 0 0.087</pose>
+    </include>
+    <!-- Tree 17: row 3, col 5 -->
+    <include>
+      <name>tree_17</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/low_poly_tree/model.sdf</uri>
+      <pose>6.000 8.000 0 0 0 0.000</pose>
+    </include>
+    <!-- Tree 18: row 3, col 6 -->
+    <include>
+      <name>tree_18</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/low_poly_tree/model.sdf</uri>
+      <pose>7.500 8.000 0 0 0 0.000</pose>
+    </include>
+    <!-- Tree 19: row 4, col 1 -->
+    <include>
+      <name>tree_19</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/low_poly_tree/model.sdf</uri>
+      <pose>0.000 12.000 0 0 0 0.000</pose>
+    </include>
+    <!-- Tree 20: row 4, col 2 -->
+    <include>
+      <name>tree_20</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/low_poly_tree/model.sdf</uri>
+      <pose>1.343 11.841 0 0 0 0.000</pose>
+    </include>
+    <!-- Tree 21: row 4, col 3 -->
+    <include>
+      <name>tree_21</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/low_poly_tree/model.sdf</uri>
+      <pose>2.956 11.805 0 0 0 0.000</pose>
+    </include>
+    <!-- Tree 22: row 4, col 4 -->
+    <include>
+      <name>tree_22</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/low_poly_tree/model.sdf</uri>
+      <pose>3.437 12.347 0 0 0 0.087</pose>
+    </include>
+    <!-- Tree 23: row 4, col 5 -->
+    <include>
+      <name>tree_23</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/low_poly_tree/model.sdf</uri>
+      <pose>6.000 12.000 0 0 0 0.000</pose>
+    </include>
+    <!-- Tree 24: row 4, col 6 -->
+    <include>
+      <name>tree_24</name>
+      <uri>file:///home/criis/ros2_ws/src/ros2_gz_qtaseixo/models/low_poly_tree/model.sdf</uri>
+      <pose>7.500 12.000 0 0 0 0.000</pose>
+    </include>
+  </world>
+</sdf>
